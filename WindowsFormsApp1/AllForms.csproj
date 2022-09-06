@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65467C78-0F7E-49B7-B132-829075747BBC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddnewPatientPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddnewPatientPage.designer.cs">
+      <DependentUpon>AddnewPatientPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backend_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Backend_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Backend_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Backend_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Backend_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Backend_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Table.cs">
+      <DependentUpon>Backend_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient_Table.cs">
+      <DependentUpon>Backend_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionPage.designer.cs">
+      <DependentUpon>SelectionPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VaccinePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VaccinePage.Designer.cs">
+      <DependentUpon>VaccinePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInPage.Designer.cs">
+      <DependentUpon>LogInPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vaccine_Project_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vaccine_Project_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vaccine_Project_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vaccine_Project_dbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vaccine_Table.cs">
+      <DependentUpon>Backend_Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddnewPatientPage.resx">
+      <DependentUpon>AddnewPatientPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionPage.resx">
+      <DependentUpon>SelectionPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VaccinePage.resx">
+      <DependentUpon>VaccinePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInPage.resx">
+      <DependentUpon>LogInPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Backend_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Backend_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Backend_Model.edmx.diagram">
+      <DependentUpon>Backend_Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Vaccine_Project_dbDataSet.xsc">
+      <DependentUpon>Vaccine_Project_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Vaccine_Project_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vaccine_Project_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Vaccine_Project_dbDataSet.xss">
+      <DependentUpon>Vaccine_Project_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Vaccine_Project_dbDataSet1.xsc">
+      <DependentUpon>Vaccine_Project_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Vaccine_Project_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vaccine_Project_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Vaccine_Project_dbDataSet1.xss">
+      <DependentUpon>Vaccine_Project_dbDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7221dc8bb172d74a551b5b063e98cbcb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Backend_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Backend_Model.Context.cs</LastGenOutput>
+      <DependentUpon>Backend_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Backend_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Backend_Model.edmx</DependentUpon>
+      <LastGenOutput>Backend_Model.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\changed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

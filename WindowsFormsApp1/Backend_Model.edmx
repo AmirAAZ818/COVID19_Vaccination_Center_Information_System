@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Vaccine_Project_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Login_Table">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient_Table">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Last_Name" />
+            <PropertyRef Name="National_Code" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Birth_Date" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="Phone_Num" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Vaccine_Name" />
+            <PropertyRef Name="Doses_Num" />
+            <PropertyRef Name="Dose1_Date" />
+            <PropertyRef Name="Dose2_Date" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="National_Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Birth_Date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone_Num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Vaccine_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Doses_Num" Type="int" Nullable="false" />
+          <Property Name="Dose1_Date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Dose2_Date" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vaccine_Table">
+          <Key>
+            <PropertyRef Name="Vaccine_Name" />
+            <PropertyRef Name="Doses_Num" />
+            <PropertyRef Name="Country_Of_Export" />
+          </Key>
+          <Property Name="Vaccine_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Doses_Num" Type="int" Nullable="false" />
+          <Property Name="Country_Of_Export" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Vaccine_Project_dbModelStoreContainer">
+          <EntitySet Name="Login_Table" EntityType="Self.Login_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient_Table" EntityType="Self.Patient_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vaccine_Table" EntityType="Self.Vaccine_Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Vaccine_Project_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Login_Table">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient_Table">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Last_Name" />
+            <PropertyRef Name="National_Code" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Birth_Date" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="Phone_Num" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Vaccine_Name" />
+            <PropertyRef Name="Doses_Num" />
+            <PropertyRef Name="Dose1_Date" />
+            <PropertyRef Name="Dose2_Date" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="National_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vaccine_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Doses_Num" Type="Int32" Nullable="false" />
+          <Property Name="Dose1_Date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Dose2_Date" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="Vaccine_Table">
+          <Key>
+            <PropertyRef Name="Vaccine_Name" />
+            <PropertyRef Name="Doses_Num" />
+            <PropertyRef Name="Country_Of_Export" />
+          </Key>
+          <Property Name="Vaccine_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Doses_Num" Type="Int32" Nullable="false" />
+          <Property Name="Country_Of_Export" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Vaccine_Project_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Login_Table" EntityType="Self.Login_Table" />
+          <EntitySet Name="Patient_Table" EntityType="Self.Patient_Table" />
+          <EntitySet Name="Vaccine_Table" EntityType="Self.Vaccine_Table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Vaccine_Project_dbModelStoreContainer" CdmEntityContainer="Vaccine_Project_dbEntities">
+          <EntitySetMapping Name="Login_Table">
+            <EntityTypeMapping TypeName="Vaccine_Project_dbModel.Login_Table">
+              <MappingFragment StoreEntitySet="Login_Table">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient_Table">
+            <EntityTypeMapping TypeName="Vaccine_Project_dbModel.Patient_Table">
+              <MappingFragment StoreEntitySet="Patient_Table">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="National_Code" ColumnName="National_Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Vaccine_Name" ColumnName="Vaccine_Name" />
+                <ScalarProperty Name="Doses_Num" ColumnName="Doses_Num" />
+                <ScalarProperty Name="Dose1_Date" ColumnName="Dose1_Date" />
+                <ScalarProperty Name="Dose2_Date" ColumnName="Dose2_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vaccine_Table">
+            <EntityTypeMapping TypeName="Vaccine_Project_dbModel.Vaccine_Table">
+              <MappingFragment StoreEntitySet="Vaccine_Table">
+                <ScalarProperty Name="Vaccine_Name" ColumnName="Vaccine_Name" />
+                <ScalarProperty Name="Doses_Num" ColumnName="Doses_Num" />
+                <ScalarProperty Name="Country_Of_Export" ColumnName="Country_Of_Export" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
